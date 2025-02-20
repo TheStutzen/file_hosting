@@ -72,7 +72,7 @@ export class CoreService {
             resolve({
               ok: true,
               message: 'File uploaded successfully!',
-              downloadUrl: `http://localhost:3000/download/${path.basename(filePath)}`
+              downloadUrl: `http://localhost:${process.env.PORT}/download/${path.basename(filePath)}`
             })
           })
 
