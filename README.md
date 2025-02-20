@@ -56,14 +56,14 @@ Once the containers are running, the application will be available at:
 
 ## Application Features
 
-### 1. Upload .MOV video and convert to .MP4
+### 1. Upload .iso file
 
 - **Endpoint:** `POST /upload`
-- **Description:** Uploads a `.mov` file and converts it to `.mp4`.
+- **Description:** Uploads a `.iso` file.
 - **Request Example (using cURL):**
 
 ```bash
-curl -X POST http://localhost:3000/upload -F "file=@/path/to/video.mov"
+curl -X POST http://localhost:3000/upload -F "file=@/path/to/***.iso"
 ```
 
 - **Response Example:**
@@ -71,17 +71,17 @@ curl -X POST http://localhost:3000/upload -F "file=@/path/to/video.mov"
 ```json
 {
   "ok": true,
-  "message": "File uploaded and converted successfully!",
-  "downloadUrl": "http://localhost:3000/download/converted-video.mp4"
+  "message": "File uploaded successfully!",
+  "downloadUrl": "http://localhost:3000/download/*****.iso"
 }
 ```
 
-### 2. Download Converted .MP4 File
+### 2. Download .iso File
 
 - **Endpoint:** `GET /download/:filename`
-- **Description:** Downloads the converted `.mp4` file.
+- **Description:** Downloads `.iso` file.
 - **Request Example:**
 
 ```bash
-curl -O http://localhost:3000/download/converted-video.mp4
+curl -O http://localhost:3000/download/****.iso
 ```
